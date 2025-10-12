@@ -1,24 +1,19 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const cors = require('cors');
-const dotenv = require('dotenv');
-const app = express();
-const PORT = process.env.PORT || 3000;
+import express from "express";
+import dotenv from "dotenv";
+import cors from "cors";
+import mongoose from "mongoose";
+import authRoutes from "./routes/authRoutes.js";
 
 dotenv.config();
+const app = express();
 
+app.use(cors());
 app.use(express.json());
-app.use(cors({
-    origin: '*'
-}));
-const authroutes = require("./Routes/arogya");
 
-app.listen(PORT || 3000,()=>{
-    console.log("server started");
-  
-})
+mongoose.connect("mongodb://localhost:27017/groupwallet")
+  .then(() => console.log("MongoDB connected"))
+  .catch(err => console.log(err));
 
+app.use("/auth", authRoutes);
 
-app.get('/', (req, res) => {
-    res.send('Hello, this is Wallet App api!');
-});
+app.listen(3000, () => console.log("Server running on port 3000"));
