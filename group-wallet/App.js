@@ -1,15 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import AuthFlow from './src/login';
+import HomeScreen from './home';
 
 export default function App() {
   return (
     <AuthFlow />
-    // <View style={styles.container}>
-    //   <Text>Open up App.js to start working on your app!</Text>
-    //   <Text>hi somesh</Text>
-    //   <StatusBar style="auto" />
-    // </View>
+    // <HomeScreen />
   );
 }
 
