@@ -1,0 +1,19 @@
+{
+  "expo": {
+    "name": "Group Wallet App",
+    "slug": "group-wallet-app", 
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "package": "com.groupwallet.app"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "1efd7cde-c685-4add-9eaa-5749f6cb5c73"
+      }
+    }
+  }
+}
